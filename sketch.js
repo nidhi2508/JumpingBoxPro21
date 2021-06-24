@@ -31,7 +31,7 @@ function setup(){
 
 function draw() {
     background(rgb(169,169,169));
-    edges=createEdgeSprites();
+    edges = createEdgeSprites();
     ball.bounceOff(edges);
 
     
@@ -41,19 +41,19 @@ function draw() {
         music.play();
     }
 
-    if(block2.isTouching(ball)){
+    if(block2.isTouching(ball) && ball.bounceOff(block2)){
         ball.shapeColor = "orange";
         ball.velocityX = 0;
         ball.velocityY = 0;
-        //write code to stop music
+        music.pause();
     }
 
-    if(block3.isTouching(ball)){
+    if(block3.isTouching(ball) && ball.bounceOff(block3)){
        ball.shapeColor = "red";
        music.play();
     }
 
-    if(block4.isTouching(ball)){
+    if(block4.isTouching(ball) && ball.bounceOff(block4)){
        ball.shapeColor = "green";
        music.play();        
     }  
